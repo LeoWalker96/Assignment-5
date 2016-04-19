@@ -1,0 +1,54 @@
+# Assignment-5
+public class Student {
+	private String name;
+	private double [] assignments;
+	private double GPA;
+	
+	public Student() {
+		name = "";
+        assignments = new double[4];
+		GPA = 0;
+	}
+	
+	public Student(String name, double[] assignments) {
+
+		this.name = name;
+		this.assignments = assignments;
+		
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double[] getAssignments() {
+		return assignments;
+	}
+	public void setAssignments(double[] assignments) {
+		this.assignments = assignments;
+	}
+	public double getGPA() {
+		return calculateAvgScore();
+	}
+	public void setGPA(double GPA) {
+		this.GPA = GPA;
+	}
+	private double calculateAvgScore() {
+		double product = assignments[0] * 0.2;
+		double product1 = assignments[1] * 0.35;
+		double product2 = assignments[2] * 0.15;
+		double product3 = assignments[3] * 0.3;
+		GPA = product + product1 + product2 + product3;
+		return GPA;
+	}
+	public String toString() {
+		String info = "";
+		info = "Student name: " + this.name;
+		for(int i=0; i<assignments.length; i++) {
+			info+="\n Assignments " + (i+1) + "\t" + assignments[i] + "\n";
+		}
+		info+= "GPA: " + getGPA();
+		return info;
+	}
+}
