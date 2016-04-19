@@ -1,0 +1,10 @@
+# Assignment-5
+import javax.swing.JOptionPane;
+
+public class ScoreGUIDriver {
+	public static void main(String[] args) {
+		double[] assignments = {95, 75, 85, 65};
+		Student student = new Student("Leo", assignments);
+		JOptionPane.showMessageDialog(null, student);		
+	}		
+}
